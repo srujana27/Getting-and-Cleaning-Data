@@ -26,24 +26,46 @@ How the script works:
 =====================
 
 ### Get the data by downloading the given files
+if(!file.exists("./data")){dir.create("./data")}
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(fileUrl,destfile ="./data/Datastep.zip",method="curl")
 
 ### Unzip the file and set a file path
-
+unzip(zipfile="./data/Dataset.zip",exdir="./data")
+path_rf<-file.path("./data","UCI HAR Dataset")
+files <- list.files(path_rf, recursive = TRUE)
+files 
 ### Read the test and train data
+dataSubjectTrain <- read.table(file.path(path_rf, "train", "subject_train.txt"),header = FALSE)
+dataActivityTrain <- read.table(file.path(path_rf, "train", "Y_train.txt"),header = FALSE)
+dataFeaturesTrain <- read.table(file.path(path_rf, "train", "X_train.txt"),header = FALSE)
+
+dataSubjectTest  <- read.table(file.path(path_rf, "test" , "subject_test.txt"),header = FALSE)
+dataActivityTest  <- read.table(file.path(path_rf, "test" , "Y_test.txt"),header = FALSE)
+dataFeaturesTest <- read.table(file.path(path_rf, "test", "X_test.txt"),header = FALSE)
+
+dataFeatures <- read.table(file.path(path_rf,"features.txt"))
+dataActivity <- read.table(file.path(path_rf,"activity_labels.txt"))
 
 ### Merge the test and train data using a rbind() function.
 
 ### Extract the measurements on the mean and standard deviation for each measurement
 
--   Take columns with Mean and Standard Deviation \#\#\# Rename the
-    variables activity, subject and activity names with descriptive
-    names. prefix t is replaced by time Acc is replaced by Accelerometer
-    Gyro is replaced by Gyroscope prefix f is replaced by frequency Mag
-    is replaced by Magnitude BodyBody is replaced by Body mean is
-    replaced by Mean std is replaced by Standard Deviation \#\#\# Create
-    a tiny\_data.txt file containing the average of each variable using
-    the subject and activity. ActivitiesMean &lt;- Activities %&gt;%
-    group\_by(Subject, Activity) %&gt;% summarize\_all(funs(mean))
-
-write.table(ActivitiesMean, "tidy\_data.txt", row.names = FALSE, quote =
-FALSE)
+-   Take columns with Mean and Standard Deviation 
+### Rename the variables activity, subject and activity names with descriptive
+    names. 
+    prefix t is replaced by time 
+    Acc is replaced by Accelerometer
+    Gyro is replaced by Gyroscope 
+    prefix f is replaced by frequency 
+    Mag is replaced by Magnitude 
+    BodyBody is replaced by Body 
+    mean is replaced by Mean 
+    std is replaced by Standard Deviation 
+### Create a tiny\_data.txt file containing the average of each variable using
+    the subject and activity. 
+  ActivitiesMean <- Activities %>% 
+  group_by(Subject, Activity) %>%
+  summarize_all(funs(mean))
+  write.table(ActivitiesMean, "tidy\_data.txt", row.names = FALSE, quote =
+  FALSE)
