@@ -52,7 +52,7 @@ rename <- gsub("std", "Standard Deviation", rename)
 
 colnames(Activities) <- rename
 
-# Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+## Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 ActivitiesAverage <- Activities %>% 
 group_by(Subject, Activity) %>%
 summarize_all(funs(mean))
