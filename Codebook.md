@@ -1,7 +1,8 @@
 **Introduction**
 
-The R script run\_analysis.R performs the 5 steps described in the
-project's instructions. 1. Read the train and test data sets and then
+The R script run\_analysis.R performs the 5 steps described in the course 
+project's instructions:
+1. Read the train and test data sets and then
 merge them using rbind()function.  
 2. Then extract only the measurements on the mean and standard deviation
 for each measurement. These columns are renamed after being taken from
@@ -16,9 +17,9 @@ each activity and each subject.
 1.  Activity - 6 values coded into:WALKING (1), WALKING\_UPSTAIRS (2),
     WALKING\_DOWNSTAIRS (3), SITTING (4), STANDING (5), LAYING(6)
 2.  Subject - 30 values representing observed volunteers within an age
-    bracket of 19-48 years. \#\# Mean and Standard Deviation of the
-    Accelerometer and Gyro measurements
-
+    bracket of 19-48 years. 
+    \#\# Mean and Standard Deviation of the
+    Accelerometer and Gyro measurements:
 3.  tBodyAcc.mean.X
 4.  tBodyAcc.mean.Y
 5.  tBodyAcc.mean.Z
@@ -100,6 +101,7 @@ each activity and each subject.
 81. fBodyBodyGyroJerkMag.meanFreq
 
 mean measures the average and std measures the standard deviation
+
 =================================================================
 
 **Information about the data set**
