@@ -1,4 +1,5 @@
 **Introduction**
+=================================================================
 
 The R script run\_analysis.R performs the 5 steps described in the course 
 project's instructions:
@@ -6,13 +7,17 @@ project's instructions:
 merge them using rbind()function.  
 2. Then extract only the measurements on the mean and standard deviation
 for each measurement. These columns are renamed after being taken from
-the features.txt. 3. Uses descriptive activity names to name the
-activities in the data set. 4. Appropriately labels the data set with
-descriptive activity names. 5. At the end, we creates an independent
+the features.txt. 
+3. Uses descriptive activity names to name the
+activities in the data set. 
+4. Appropriately labels the data set with
+descriptive activity names. 
+5. At the end, we creates an independent
 tidy data set that contain values with the average of each variable for
 each activity and each subject.
 
 **Information about the variables**
+=================================================================
 
 1.  Activity - 6 values coded into:WALKING (1), WALKING\_UPSTAIRS (2),
     WALKING\_DOWNSTAIRS (3), SITTING (4), STANDING (5), LAYING(6)
@@ -102,10 +107,9 @@ each activity and each subject.
 
 mean measures the average and std measures the standard deviation
 
-=================================================================
 
 **Information about the data set**
-
+=================================================================
 The experiment measures human activity recognition using smartphones.The
 datasets were obtained from the following links.
 <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
